@@ -8,3 +8,4 @@ doc/.build
 .*.sw[op]
 /.project
 /.settings
+/.pydevproject
