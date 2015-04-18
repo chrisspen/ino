@@ -6,3 +6,5 @@ dist
 ino.egg-info
 doc/.build
 .*.sw[op]
+/.project
+/.settings
