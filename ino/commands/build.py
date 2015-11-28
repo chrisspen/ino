@@ -221,7 +221,8 @@ class Build(Command):
         flags = SpaceList()
         for d in libdirs:
             flags.append('-I' + d)
-            flags.extend('-I' + subd for subd in list_subdirs(d, recursive=True, exclude=['examples']))
+            # recursive=True creates so many include directories that it exceeds avg-gcc's maximum list length.
+            flags.extend('-I' + subd for subd in list_subdirs(d, recursive=False, exclude=['examples']))
         return flags
 
     def _scan_dependencies(self, dir, lib_dirs, inc_flags):
